@@ -17,6 +17,19 @@ module.exports = {
   async create(ctx) {
     let cart = await strapi.services.cart.create(ctx.request.body);
     return sanitizeEntity(cart, { model: strapi.models.cart });
-  }
+  },
+
+  async addProduct(ctx){
+    const { code, sku } = ctx.params;
+    let cart = await strapi.services.cart.addProduct(code, {sku: sku, ...ctx.request.body});
+    return sanitizeEntity(cart, { model: strapi.models.cart });
+  },
+
+  async removeProduct(ctx){
+    const { code, sku } = ctx.params;
+    let cart = await strapi.services.cart.removeProduct(code, {sku: sku, ...ctx.request.body});
+    return sanitizeEntity(cart, { model: strapi.models.cart });    
+  },
+
 
 };

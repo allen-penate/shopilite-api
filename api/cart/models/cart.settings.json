@@ -29,7 +29,7 @@
     "discount": {
       "type": "decimal",
       "default": 0,
-      "required": true
+      "required": false
     },
     "items": {
       "collection": "cart-item",

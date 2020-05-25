@@ -23,6 +23,22 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/carts/:code/products/:sku/add",
+      "handler": "cart.addProduct",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/carts/:code/products/:sku/remove",
+      "handler": "cart.removeProduct",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

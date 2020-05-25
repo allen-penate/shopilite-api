@@ -28,10 +28,10 @@ const FixtureManager = {
 
   async createCart(cart) {
     const code = cart.code;
-    cart.lines.forEach(async (line) => {
+    cart.items.forEach(async (item) => {
       await strapi.services.cart.addProduct(code, {
-        sku: line.product.sku,
-        quantity: line.quantity,
+        sku: item.product.sku,
+        quantity: item.quantity,
       });
     });
   },
@@ -42,7 +42,7 @@ module.exports = {
     await this.initProducts();
     await this.initActions();
     await this.initPromotions();
-    // await this.initCarts();
+    await this.initCarts();
   },
 
   async initProducts() {
