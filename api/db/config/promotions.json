@@ -33,6 +33,23 @@
         "rule_type": "itemTotal",
         "quantity": 3
       }
+    },
+    {
+      "code": "BUY3ALEXAGET10%OFF",
+      "description": "Buy more than 3 Alexa Speakers get 10% discount on all Alexa Speakers",
+      "priority": 1,
+      "product": {
+        "sku": "A304SD"
+      },
+      "action": {
+        "action_type": "itemtotaldiscount",
+        "amount": 10,
+        "is_percentage": true
+      },
+      "rule": {
+        "rule_type": "itemTotal",
+        "quantity": 3
+      }
     }
   ]
 }
