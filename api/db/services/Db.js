@@ -41,7 +41,7 @@ module.exports = {
   async init() {
     await this.initProducts();
     await this.initActions();
-    // await this.initPromotions();
+    await this.initPromotions();
     // await this.initCarts();
   },
 
