@@ -9,12 +9,7 @@ module.exports = {
         discount: Number.parseFloat(0).toFixed(2),
         total: Number.parseFloat(cartItem.subtotal).toFixed(2)
       }
-
-      order.items.push(orderItem);
-      order.subtotal += orderItem.subtotal;
-      order.discount += orderItem.discount;
-      order.total += orderItem.total;
-      return order;
+      return order.addItem(orderItem);
     };
   }
 };

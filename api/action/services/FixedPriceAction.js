@@ -18,7 +18,6 @@ module.exports = {
       const promotionTotal = Math.floor(cartItemQuantity/ruleQuantity) * promotionAction.amount * promotionAction.target.price;
       const regularTotal = (cartItemQuantity % ruleQuantity) * cartItem.product.price;
       const adjustedTotal = promotionTotal + regularTotal;
-      debugger;
       let orderItem = {
         product: cartItem.product,
         quantity: cartItemQuantity,

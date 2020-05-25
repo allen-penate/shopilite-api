@@ -1,6 +1,23 @@
 {
   "promotions": [
     {
+      "code": "BUY1MACGET1RASP",
+      "description": "Buy a MacBook Pro get a free Raspberry Pi B",
+      "priority": 1,
+      "product": {
+        "sku": "43N23P"
+      },
+      "action": {
+        "action_type": "itemfree",
+        "amount": 1,
+        "is_percentage": false
+      },
+      "rule": {
+        "rule_type": "itemTotal",
+        "quantity": 1
+      }
+    },    
+    {
       "code": "BUY3HOMESX2",
       "description": "Buy 3 Google Homes for the price of 2",
       "priority": 1,
