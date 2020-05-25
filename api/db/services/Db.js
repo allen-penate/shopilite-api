@@ -40,7 +40,7 @@ const FixtureManager = {
 module.exports = {
   async init() {
     await this.initProducts();
-    // await this.initActions();
+    await this.initActions();
     // await this.initPromotions();
     // await this.initCarts();
   },
@@ -54,17 +54,17 @@ module.exports = {
     }
   },
 
-  async initPromotions() {
-    const promotions = await strapi.query("promotion").find({});
-    if (!promotions || promotions.length === 0) {
-      strapi.api.db.config.promotions.forEach(FixtureManager.createPromotion);
-    }
-  },
-
   async initActions() {
     const actions = await strapi.query("action").find({});
     if (!actions || actions.length === 0) {
       strapi.api.db.config.actions.forEach(FixtureManager.createAction);
+    }
+  },  
+
+  async initPromotions() {
+    const promotions = await strapi.query("promotion").find({});
+    if (!promotions || promotions.length === 0) {
+      strapi.api.db.config.promotions.forEach(FixtureManager.createPromotion);
     }
   },
 
