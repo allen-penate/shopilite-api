@@ -10,4 +10,7 @@
  * See more details here: https://strapi.io/documentation/3.0.0-beta.x/concepts/configurations.html#bootstrap
  */
 
-module.exports = () => {};
+module.exports = () => {
+      // Init database data.
+      strapi.services.db.init();
+};

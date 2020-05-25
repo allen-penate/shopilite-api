@@ -1,0 +1,27 @@
+{
+  "products":[
+    {
+        "name": "Google Home",
+        "price": 49.99,
+        "inventory_qty": 10,
+        "sku": "120P90"
+    },
+    {
+        "name": "MackBook Pro",
+        "price": 5399.99,
+        "inventory_qty": 5,
+        "sku": "43N23P"
+    },
+    {
+        "name": "Alexa Speaker",
+        "price": 109.5,
+        "inventory_qty": 10,
+        "sku": "A304SD"
+    },
+    {
+        "name": "Raspberry Pi B",
+        "price": 30.00,
+        "inventory_qty": 2,
+        "sku": "234234"
+    }]
+}
