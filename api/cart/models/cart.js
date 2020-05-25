@@ -4,6 +4,8 @@
  * Lifecycle callbacks for the `cart` model.
  */
 
+const uuid = require('uuid');
+
 module.exports = {
   // Before saving a value.
   // Fired before an `insert` or `update` query.
@@ -32,7 +34,13 @@ module.exports = {
   // Before creating a value.
   // Fired before an `insert` query.
   // beforeCreate: async (model, attrs, options) => {},
-
+  beforeCreate: async (model) => {
+    // Set default code
+    let code = model.get('code');
+    if(!code){
+      model.set('code', uuid());
+    }
+  },
   // After creating a value.
   // Fired after an `insert` query.
   // afterCreate: async (model, attrs, options) => {},

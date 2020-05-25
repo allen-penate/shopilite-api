@@ -1,0 +1,28 @@
+{
+  "actions": [
+    {
+      "action_type": "itemfree",
+      "amount": 1,
+      "is_percentage": false,
+      "target": {
+        "sku": "234234"
+      }      
+    },
+    {
+      "action_type": "fixedprice",
+      "amount": 2,
+      "is_percentage": false,
+      "target": {
+        "sku": "120P90"
+      }
+    },
+    {
+      "action_type": "itemtotaldiscount",
+      "amount": 10,
+      "is_percentage": true,
+      "target": {
+        "sku": "A304SD"
+      }      
+    }
+  ]
+}

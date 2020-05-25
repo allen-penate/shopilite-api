@@ -10,14 +10,6 @@
     },
     {
       "method": "GET",
-      "path": "/carts/count",
-      "handler": "cart.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
       "path": "/carts/:id",
       "handler": "cart.findOne",
       "config": {
@@ -34,16 +26,16 @@
     },
     {
       "method": "PUT",
-      "path": "/carts/:id",
-      "handler": "cart.update",
+      "path": "/carts/:code/products/:sku/add",
+      "handler": "cart.addProduct",
       "config": {
         "policies": []
       }
     },
     {
-      "method": "DELETE",
-      "path": "/carts/:id",
-      "handler": "cart.delete",
+      "method": "PUT",
+      "path": "/carts/:code/products/:sku/remove",
+      "handler": "cart.removeProduct",
       "config": {
         "policies": []
       }

@@ -1,0 +1,15 @@
+{
+  "carts": [
+    {
+      "code": "1f4aa898-3f26-4f4f-8df4-663e2bb20f72",
+      "items": [
+        {
+          "product": {
+            "sku": "120P90"
+          },
+          "quantity": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "promotions": [
+    {
+      "code": "BUY3HOMESX2",
+      "description": "Buy 3 Google Homes for the price of 2",
+      "priority": 1,
+      "product": {
+        "sku": "120P90"
+      },
+      "action": {
+        "action_type": "fixedprice",
+        "amount": 2,
+        "is_percentage": false
+      },
+      "rule": {
+        "rule_type": "itemTotal",
+        "quantity": 3
+      }
+    }
+  ]
+}
