@@ -39,6 +39,14 @@
       "config": {
         "policies": []
       }
-    }
+    },
+    {
+      "method": "PUT",
+      "path": "/carts/:code/checkout",
+      "handler": "cart.checkout",
+      "config": {
+        "policies": []
+      }
+    } 
   ]
 }
