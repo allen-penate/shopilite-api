@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "name": "Cart"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "code": {
+      "type": "uid",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true,
+      "default": "created"
+    },
+    "total": {
+      "type": "decimal",
+      "default": 0
+    },
+    "subtotal": {
+      "type": "decimal",
+      "default": 0
+    },
+    "discount": {
+      "type": "decimal",
+      "default": 0
+    },
+    "items": {
+      "collection": "cart-item",
+      "via": "cart"
+    }
+  }
+}

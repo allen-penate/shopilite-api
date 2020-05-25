@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actions",
+  "info": {
+    "name": "Action"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "action_type": {
+      "type": "string",
+      "required": true
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "is_percentage": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "target": {
+      "model": "product"
+    }
+  }
+}

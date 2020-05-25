@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotions",
+  "info": {
+    "name": "Promotion"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "priority": {
+      "type": "integer",
+      "default": 1,
+      "private": false,
+      "required": false
+    },
+    "product": {
+      "model": "product"
+    },
+    "rule": {
+      "model": "rule"
+    },
+    "action": {
+      "model": "action"
+    }
+  }
+}

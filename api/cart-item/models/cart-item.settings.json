@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cart_items",
+  "info": {
+    "name": "CartItem"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "product": {
+      "model": "product"
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    },
+    "subtotal": {
+      "type": "decimal"
+    },
+    "cart": {
+      "via": "items",
+      "model": "cart"
+    }
+  }
+}

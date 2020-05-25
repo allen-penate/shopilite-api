@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rules",
+  "info": {
+    "name": "Rule"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "rule_type": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
