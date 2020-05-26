@@ -1,6 +1,17 @@
 {
   "carts": [
     {
+      "code": "1f4aa898-3f26-4f4f-8df4-663e2bb20f71",
+      "items": [
+        {
+          "product": {
+            "sku": "43N23P"
+          },
+          "quantity": 1
+        }
+      ]
+    },    
+    {
       "code": "1f4aa898-3f26-4f4f-8df4-663e2bb20f72",
       "items": [
         {
@@ -10,6 +21,17 @@
           "quantity": 3
         }
       ]
-    }
+    },
+    {
+      "code": "1f4aa898-3f26-4f4f-8df4-663e2bb20f73",
+      "items": [
+        {
+          "product": {
+            "sku": "A304SD"
+          },
+          "quantity": 3
+        }
+      ]
+    }    
   ]
 }

@@ -30,6 +30,11 @@ module.exports = {
     let cart = await strapi.services.cart.removeProduct(code, {sku: sku, ...ctx.request.body});
     return sanitizeEntity(cart, { model: strapi.models.cart });    
   },
+  
+  async checkout(ctx){
+    const { code } = ctx.params;
+    return strapi.services.cart.checkout(code);
+  }
 
 
 };
