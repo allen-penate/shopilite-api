@@ -5,9 +5,9 @@ module.exports = {
       orderItem = {
         product: cartItem.product,
         quantity: cartItem.quantity,
-        subtotal:  Number.parseFloat(cartItem.subtotal).toFixed(2),
-        discount: Number.parseFloat(0).toFixed(2),
-        total: Number.parseFloat(cartItem.subtotal).toFixed(2)
+        subtotal:  +cartItem.subtotal.toFixed(2),
+        discount: 0,
+        total: +cartItem.subtotal.toFixed(2)
       }
       return order.addItem(orderItem);
     };

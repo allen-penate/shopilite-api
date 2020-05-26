@@ -32,6 +32,17 @@
           "quantity": 3
         }
       ]
+    },
+    {
+      "code": "5814cb36-df99-4113-a3ab-7fb16faf8f8f",
+      "items": [
+        {
+          "product": {
+            "sku": "234234"
+          },
+          "quantity": 2
+        }
+      ]
     }    
   ]
 }

@@ -3,18 +3,12 @@
     {
       "method": "GET",
       "path": "/carts",
-      "handler": "cart.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "cart.find"
     },
     {
       "method": "GET",
-      "path": "/carts/:id",
-      "handler": "cart.findOne",
-      "config": {
-        "policies": []
-      }
+      "path": "/carts/:code",
+      "handler": "cart.findOne"
     },
     {
       "method": "POST",

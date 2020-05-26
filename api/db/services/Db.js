@@ -45,6 +45,10 @@ module.exports = {
     await this.initCarts();
   },
 
+  equals(arr,otherArr){
+    return arr.length == otherArr.length && arr.every((u, i) => u === otherArr[i]);
+  },
+
   async initProducts() {
     const products = await strapi.query("product").find({});
     if (!products || products.length === 0) {

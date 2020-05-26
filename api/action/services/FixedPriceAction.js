@@ -22,7 +22,7 @@ module.exports = {
         product: cartItem.product,
         quantity: cartItemQuantity,
         subtotal:  cartItem.subtotal,
-        discount: cartItem.subtotal - adjustedTotal,
+        discount: +(cartItem.subtotal - adjustedTotal).toFixed(2),
         total: adjustedTotal
       }
       return order.addItem(orderItem);
