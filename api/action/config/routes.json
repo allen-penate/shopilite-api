@@ -3,50 +3,17 @@
     {
       "method": "GET",
       "path": "/actions",
-      "handler": "action.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "action.find"
     },
     {
       "method": "GET",
       "path": "/actions/count",
-      "handler": "action.count",
-      "config": {
-        "policies": []
-      }
+      "handler": "action.count"
     },
     {
       "method": "GET",
       "path": "/actions/:id",
-      "handler": "action.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/actions",
-      "handler": "action.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/actions/:id",
-      "handler": "action.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/actions/:id",
-      "handler": "action.delete",
-      "config": {
-        "policies": []
-      }
+      "handler": "action.findOne"
     }
   ]
 }
