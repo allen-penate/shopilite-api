@@ -224,7 +224,7 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 3 Alexa Speakers -- To
 });
 
 // Checkout cart with 2 Raspberry Pi -- Total: $60
-describe("PUT /carts/:code/checkout -- Checkout cart with 2 Raspberry Pi -- Total: $60", () => {
+describe("PUT /carts/:code/checkout -- Checkout cart with 1 Raspberry Pi -- Total: $30", () => {
  
   const url = "/carts/5814cb36-df99-4113-a3ab-7fb16faf8f8f/checkout";
   const response = {
@@ -236,15 +236,15 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 2 Raspberry Pi -- Tota
             "product": {
                 "sku": "234234"
             },
-            "quantity": 2,
-            "subtotal": 60,
+            "quantity": 1,
+            "subtotal": 30,
             "discount": 0,
             "total": 60
         }
     ],
-    "subtotal": 60,
+    "subtotal": 30,
     "discount": 0,
-    "total": 60
+    "total": 30
 }
 
   it("should respond with 200", async (done) => {
