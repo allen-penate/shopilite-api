@@ -270,7 +270,7 @@ First time application starts it will seed the Database with all the necessary d
 }
 ```
 ## Admin
-By default, the administration panel is exposed via (http://localhost:1337/admin).As previously mentioned the used of the admin panel is totally optional and not required to access API documentation and functionality.
+By default, the administration panel is exposed via [http://localhost:1337/admin].As previously mentioned the used of the admin panel is totally optional and not required to access API documentation and functionality.
 
 ## Test Suite
 ```sh
@@ -295,7 +295,7 @@ yarn test
 
 
 ## Documentation
-API documentation can be accessed via [http://localhost:1337/documentation].It is based on Swagger UI. All available end-points can be visualized and tested from here.
+API documentation can be accessed via [http://localhost:1337/documentation] .It is based on Swagger UI. All available end-points can be visualized and tested from here.
 
 ## Main End-Points
 ### [GET] /products
