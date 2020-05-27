@@ -17,6 +17,7 @@ async function setupStrapi(entryNamesToOpen) {
     await Strapi().load();
     instance = strapi; // strapi is global now
     await instance.runBootstrapFunctions();
+    
     instance.app
       .use(instance.router.routes()) // this code in copied from app/node_modules/strapi/lib/Strapi.js
       .use(instance.router.allowedMethods());

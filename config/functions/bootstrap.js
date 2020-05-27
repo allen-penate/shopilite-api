@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -11,6 +11,10 @@
  */
 
 module.exports = () => {
-      // Init database data.
-      strapi.services.db.init();
+  // Init database data.
+ 
+  if (!strapi.config.currentEnvironment.testMode) {
+    strapi.services.db.init();
+  }
+
 };

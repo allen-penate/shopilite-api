@@ -21,7 +21,7 @@ module.exports = {
 
   async findOne(ctx) {
     const { code } = ctx.params;
-    const cart = await strapi.services.cart.findOne({code});
+    const cart = await strapi.services.cart.findOne({code},['items','items.product']);
     return sanitizeEntity(cart, { model: strapi.models.cart });
   },  
 
