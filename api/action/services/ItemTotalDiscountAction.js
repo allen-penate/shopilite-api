@@ -12,8 +12,8 @@ module.exports = {
       let discount =  action.amount * totalToDiscount;
 
       orderItem = {
-        product: action.target,
-        quantity: cartItem.quantity,
+        product: {sku: action.target.sku},
+        quantity: quantity,
         subtotal: subtotal,
         discount: discount,
         total: subtotal - discount

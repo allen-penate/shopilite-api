@@ -101,11 +101,7 @@ describe("PUT /carts/:code/checkout -- Checkout Cart with MacBook Pro, Raspberry
     "items": [
         {
             "product": {
-                "id": 2,
-                "sku": "43N23P",
-                "name": "MackBook Pro",
-                "price": 5399.99,
-                "inventory_qty": 5
+                "sku": "43N23P"
             },
             "quantity": 1,
             "subtotal": 5399.99,
@@ -114,11 +110,7 @@ describe("PUT /carts/:code/checkout -- Checkout Cart with MacBook Pro, Raspberry
         },
         {
             "product": {
-                "id": 4,
-                "sku": "234234",
-                "name": "Raspberry Pi B",
-                "price": 30,
-                "inventory_qty": 2
+                "sku": "234234"
             },
             "quantity": 1,
             "subtotal": 30,
@@ -158,11 +150,7 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 3 Google Homes -- Tota
     "items": [
         {
             "product": {
-                "id": 1,
-                "sku": "120P90",
-                "name": "Google Home",
-                "price": 49.99,
-                "inventory_qty": 10
+                "sku": "120P90"
             },
             "quantity": 3,
             "subtotal": 149.97,
@@ -204,11 +192,7 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 3 Alexa Speakers -- To
     "items": [
         {
             "product": {
-                "id": 3,
-                "sku": "A304SD",
-                "name": "Alexa Speaker",
-                "price": 109.5,
-                "inventory_qty": 10
+                "sku": "A304SD"
             },
             "quantity": 3,
             "subtotal": 328.5,
@@ -250,11 +234,7 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 2 Raspberry Pi -- Tota
     "items": [
         {
             "product": {
-                "id": 4,
-                "sku": "234234",
-                "name": "Raspberry Pi B",
-                "price": 30,
-                "inventory_qty": 2
+                "sku": "234234"
             },
             "quantity": 2,
             "subtotal": 60,

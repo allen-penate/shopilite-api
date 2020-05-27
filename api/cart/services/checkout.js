@@ -18,9 +18,9 @@ let Order = (cart)=>{
     total: 0.00,
     addItem(item){
       this.items.push(item);
-      this.subtotal += item.subtotal;
-      this.discount += item.discount;
-      this.total += item.total;
+      this.subtotal += item.subtotal || 0;
+      this.discount += item.discount || 0;
+      this.total += item.total || 0;
       return this;
     }
   }

@@ -6,20 +6,20 @@
  */
 
 module.exports = {
-  //Reducer
   process(order){
     return (promotion, cartItem) =>{
-      if(!promotion || !promotion.rule || !promotion.action || !promotion.action.target || !cartItem){
+      let {action, rule} = promotion;
+      if(!promotion || !rule || !action || !action.target || !cartItem){
         return order;
       }
-      const promotionAction = promotion.action || {};
-      const ruleQuantity = promotion.rule.quantity;
+      let {product} = cartItem;
+      const ruleQuantity = rule.quantity;
       const cartItemQuantity = cartItem.quantity;
-      const promotionTotal = Math.floor(cartItemQuantity/ruleQuantity) * promotionAction.amount * promotionAction.target.price;
-      const regularTotal = (cartItemQuantity % ruleQuantity) * cartItem.product.price;
+      const promotionTotal = Math.floor(cartItemQuantity/ruleQuantity) * action.amount * action.target.price;
+      const regularTotal = (cartItemQuantity % ruleQuantity) * product.price;
       const adjustedTotal = promotionTotal + regularTotal;
       let orderItem = {
-        product: cartItem.product,
+        product: {sku: product.sku},
         quantity: cartItemQuantity,
         subtotal:  cartItem.subtotal,
         discount: +(cartItem.subtotal - adjustedTotal).toFixed(2),

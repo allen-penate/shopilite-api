@@ -2,12 +2,13 @@ module.exports = {
   //Reducer
   process(order){
     return (promotion, cartItem) =>{
+      let {product, quantity, subtotal} = cartItem;
       orderItem = {
-        product: cartItem.product,
-        quantity: cartItem.quantity,
-        subtotal:  +cartItem.subtotal.toFixed(2),
+        product: {sku: product.sku},
+        quantity: quantity,
+        subtotal:  +subtotal.toFixed(2),
         discount: 0,
-        total: +cartItem.subtotal.toFixed(2)
+        total: +subtotal.toFixed(2)
       }
       return order.addItem(orderItem);
     };
