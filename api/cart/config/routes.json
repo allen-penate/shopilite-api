@@ -3,50 +3,32 @@
     {
       "method": "GET",
       "path": "/carts",
-      "handler": "cart.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "cart.find"
     },
     {
       "method": "GET",
-      "path": "/carts/:id",
-      "handler": "cart.findOne",
-      "config": {
-        "policies": []
-      }
+      "path": "/carts/:code",
+      "handler": "cart.findOne"
     },
     {
       "method": "POST",
       "path": "/carts",
-      "handler": "cart.create",
-      "config": {
-        "policies": []
-      }
+      "handler": "cart.create"
     },
     {
       "method": "PUT",
       "path": "/carts/:code/products/:sku/add",
-      "handler": "cart.addProduct",
-      "config": {
-        "policies": []
-      }
+      "handler": "cart.addProduct"
     },
     {
       "method": "PUT",
       "path": "/carts/:code/products/:sku/remove",
-      "handler": "cart.removeProduct",
-      "config": {
-        "policies": []
-      }
+      "handler": "cart.removeProduct"
     },
     {
       "method": "PUT",
       "path": "/carts/:code/checkout",
-      "handler": "cart.checkout",
-      "config": {
-        "policies": []
-      }
+      "handler": "cart.checkout"
     } 
   ]
 }

@@ -14,21 +14,22 @@ module.exports = {
       }
 
       let freeProduct = promotion.action.target;
+      let {product, quantity, subtotal, discount} = cartItem;
 
       let existingItem = {
-        product: cartItem.product,
-        quantity: cartItem.quantity,
-        subtotal:  cartItem.subtotal,
-        discount: cartItem.discount || 0.0,
-        total: cartItem.subtotal
+        product: {sku: product.sku},
+        quantity: quantity,
+        subtotal: subtotal,
+        discount: discount || 0.0,
+        total: subtotal
       }
-      let freeQuantity = (cartItem.quantity > freeProduct.inventory_qty) ? freeProduct.inventory_qty : cartItem.quantity;
-      let subtotal = freeQuantity * freeProduct.price;
+      let freeQuantity = (quantity > freeProduct.inventory_qty) ? freeProduct.inventory_qty : quantity;
+      let _subtotal = freeQuantity * freeProduct.price;
       let freeItem = {
-          product: freeProduct,
+          product: {sku: freeProduct.sku},
           quantity: freeQuantity,
-          subtotal: subtotal,
-          discount: subtotal,
+          subtotal: _subtotal,
+          discount: _subtotal,
           total: 0.0
       }
       return order.addItem(existingItem).addItem(freeItem);

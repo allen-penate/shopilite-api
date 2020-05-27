@@ -45,6 +45,20 @@ module.exports = {
     await this.initCarts();
   },
 
+  async clean() {
+    await strapi.query("product").delete({});
+    await strapi.query("rule").delete({});
+    await strapi.query("action").delete({});
+    await strapi.query("promotion").delete({});
+    await strapi.query("cart").delete({});
+    await strapi.query("cart-item").delete({});
+  },
+
+  async restore() {
+    await this.clean();
+    await this.init();
+  },
+
   async initProducts() {
     const products = await strapi.query("product").find({});
     if (!products || products.length === 0) {
@@ -59,7 +73,7 @@ module.exports = {
     if (!actions || actions.length === 0) {
       strapi.api.db.config.actions.forEach(FixtureManager.createAction);
     }
-  },  
+  },
 
   async initPromotions() {
     const promotions = await strapi.query("promotion").find({});

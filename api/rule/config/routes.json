@@ -3,50 +3,17 @@
     {
       "method": "GET",
       "path": "/rules",
-      "handler": "rule.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "rule.find"
     },
     {
       "method": "GET",
       "path": "/rules/count",
-      "handler": "rule.count",
-      "config": {
-        "policies": []
-      }
+      "handler": "rule.count"
     },
     {
       "method": "GET",
       "path": "/rules/:id",
-      "handler": "rule.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/rules",
-      "handler": "rule.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/rules/:id",
-      "handler": "rule.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/rules/:id",
-      "handler": "rule.delete",
-      "config": {
-        "policies": []
-      }
+      "handler": "rule.findOne"
     }
   ]
 }

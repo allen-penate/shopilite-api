@@ -8,19 +8,25 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "debug": "nodemon --inspect=0.0.0.0:9228 server.js"
+    "debug": "nodemon --inspect=0.0.0.0:9228 server.js",
+    "test": "FORCE_COLOR=true NODE_ENV=test jest --config jest.config.e2e.js --runInBand --verbose --forceExit --detectOpenHandles "
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "co-supertest": "^0.0.10",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "knex": "<0.20.0",
+    "lodash": "^4.17.15",
     "sqlite3": "latest",
     "strapi": "3.0.0-beta.20.3",
     "strapi-admin": "3.0.0-beta.20.3",
     "strapi-connector-bookshelf": "3.0.0-beta.20.3",
     "strapi-plugin-content-manager": "3.0.0-beta.20.3",
     "strapi-plugin-content-type-builder": "3.0.0-beta.20.3",
+    "strapi-plugin-documentation": "3.0.0-beta.20.3",
     "strapi-plugin-email": "3.0.0-beta.20.3",
     "strapi-plugin-upload": "3.0.0-beta.20.3",
     "strapi-plugin-users-permissions": "3.0.0-beta.20.3",
