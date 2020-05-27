@@ -102,7 +102,11 @@ module.exports = {
   async checkout(code){
     let promotions = await strapi.query('promotion').find({},['product','rule','action','action.target']);
     let cart = await this.findOne({code: code},['items','items.product']);
-    return strapi.services.checkout.process(cart, promotions);
+    let order = await strapi.services.checkout.process(cart, promotions);
+    if(order){
+      strapi.query('cart').update({id:cart.id}, {state:"checked"})
+    }
+    return order;
   }
 
 };

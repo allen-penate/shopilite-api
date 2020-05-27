@@ -1,4 +1,6 @@
 const request = require("supertest");
+const _ = require("lodash");
+
 // function from gist file
 const { setupStrapi } = require("../../helpers/strapi");
 
@@ -11,12 +13,17 @@ beforeAll(async () => {
   app = await setupStrapi(); // return singleton so it can be called many times
 });
 
-function toContainAllProducts(response){
+
+let toContainAllProducts = (response)=>{
   let mapper = ({sku,name, price}) => {
-    return {sku: sku, name: name, price: price}
+    return {sku,name, price};
   };
   let _products =  response.body.map(mapper);
-  return (strapi.api.db.config.products.map(mapper) == _products);
+  let _expected = strapi.api.db.config.products.map(mapper);
+
+  if(!_.isEqual(_products,_expected)){
+    throw new Error("Response does not match expected products");
+  }
 };
 
 describe("GET /products", () => {

@@ -19,16 +19,9 @@ let toContainAllCarts = (response)=>{
   };
   let _carts =  response.body.map(mapper);
   let _expected = strapi.api.db.config.carts.map(mapper);
-  return _.isEqual(_carts,_expected);
-};
-
-let getCartCode = ()=>{
-  return "1f4aa898-3f26-4f4f-8df4-663e2bb20f72";
-};
-
-let toContainExpectedCart = (response)=>{
-  let {code} = response.body;
-  return code === getCartCode();
+  if(!_.isEqual(_carts,_expected)){
+    throw new Error("Response does not match expected result");
+  }
 };
 
 describe("GET /carts", () => {
@@ -49,6 +42,17 @@ describe("GET /carts", () => {
 
 });
 
+let getCartCode = ()=>{
+  return "1f4aa898-3f26-4f4f-8df4-663e2bb20f72";
+};
+
+let toContainExpectedCart = (response)=>{
+  let {code} = response.body;
+  if(!_.isEqual(code,getCartCode())){
+    throw new Error("Response does not match expected cart code");
+  }
+};
+
 describe("GET /carts/:code", () => {
  
   let url = `/carts/${getCartCode()}`;
@@ -65,7 +69,7 @@ describe("GET /carts/:code", () => {
     request(app.server) 
       .get(url)
       .expect(toContainExpectedCart)
-      .end(done);
+      .end(done)
   });
 
 });
@@ -91,6 +95,9 @@ describe("PUT /carts/:code/checkout -- Checkout Cart with MacBook Pro, Raspberry
  
   const url = "/carts/1f4aa898-3f26-4f4f-8df4-663e2bb20f71/checkout";
   const response = {
+    "cart": {
+      "code": "1f4aa898-3f26-4f4f-8df4-663e2bb20f71"
+    },      
     "items": [
         {
             "product": {
@@ -145,6 +152,9 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 3 Google Homes -- Tota
  
   const url = "/carts/1f4aa898-3f26-4f4f-8df4-663e2bb20f72/checkout";
   const response = {
+    "cart": {
+      "code": "1f4aa898-3f26-4f4f-8df4-663e2bb20f72"
+    },    
     "items": [
         {
             "product": {
@@ -188,6 +198,9 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 3 Alexa Speakers -- To
  
   const url = "/carts/1f4aa898-3f26-4f4f-8df4-663e2bb20f73/checkout";
   const response = {
+    "cart": {
+      "code": "1f4aa898-3f26-4f4f-8df4-663e2bb20f73"
+    },
     "items": [
         {
             "product": {
@@ -231,6 +244,9 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 2 Raspberry Pi -- Tota
  
   const url = "/carts/5814cb36-df99-4113-a3ab-7fb16faf8f8f/checkout";
   const response = {
+    "cart": {
+      "code": "5814cb36-df99-4113-a3ab-7fb16faf8f8f"
+    },
     "items": [
         {
             "product": {

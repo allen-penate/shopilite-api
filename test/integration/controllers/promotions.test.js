@@ -1,4 +1,6 @@
 const request = require("supertest");
+const _ = require("lodash");
+
 // function from gist file
 const { setupStrapi } = require("../../helpers/strapi");
 
@@ -14,10 +16,13 @@ beforeAll(async () => {
 
 let toContainAllPromotions = (response)=>{
   let mapper = ({code,description, priority}) => {
-    return {code: code, description: description, priority: priority}
+    return {code, description, priority}
   };
   let _promotions =  response.body.map(mapper);
-  return (strapi.api.db.config.promotions.map(mapper) == _promotions);
+  let _expected = strapi.api.db.config.promotions.map(mapper);
+  if(!_.isEqual(_promotions,_expected)){
+    throw new Error("Response does not match expected promotions");
+  }
 };
 
 describe("GET /promotions", () => {

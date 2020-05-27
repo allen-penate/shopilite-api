@@ -1,11 +1,11 @@
 {
-  "defaultConnection": "default",
+  "defaultConnection": "test",
   "connections": {
-    "default": {
+    "test": {
       "connector": "bookshelf",
       "settings": {
         "client": "sqlite",
-        "filename": ".tmp/data.db",
+        "filename": ".tmp/test.db",
         "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
         "port": "${process.env.DATABASE_PORT || 27017}",
         "database": "${process.env.DATABASE_NAME || 'strapi'}",
