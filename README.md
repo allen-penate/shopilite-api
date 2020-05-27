@@ -53,7 +53,7 @@ Go to the root of the repository
 cd shopilite-api && npm install
 ```
 
-Or if using Yarn
+if using Yarn:
 
 ```sh
 cd shopilite-api && yarn
@@ -63,7 +63,7 @@ cd shopilite-api && yarn
 npm run build
 ```
 
-Or if using Yarn
+if using Yarn:
 
 ```sh
 yarn build
@@ -77,7 +77,7 @@ This command , among other things, will build the admin UI to manage content typ
 npm run start
 ```
 
-Or if using Yarn
+if using Yarn:
 
 ```sh
 yarn start
@@ -270,17 +270,29 @@ First time application starts it will seed the Database with all the necessary d
 }
 ```
 ## Admin
-By default, the administration panel is exposed via [http://localhost:1337/admin].As previously mentioned the used of the admin panel is totally optional and not required to access API documentation and functionality.
+By default, the administration panel is exposed via (http://localhost:1337/admin).As previously mentioned the used of the admin panel is totally optional and not required to access API documentation and functionality.
 
 ## Test Suite
-Test Suite can executed thru :
-but be aware there are some issues when restoring a SQLiteDB regarding readonly locks,most of the tests dont persist domain information.
+```sh
+npm run test
+```
+if using Yarn:
+
+```sh
+yarn test
+```
 
 ## Domain Entities
 
 ## Services
 
 ## TODOS
+* Improve & Fix the test suite (Most of the existing integration tests do not mutate actual data information due to issues when deleting/restoring a SQLiteDB)
+* Validate product disponibility against Inventory (Involved data only respond to the available inventory, promotions and cart example scenarios).
+* Improve validations & customize error messages.
+* Apply some Authentication/Authorization mechanism(like a jwt token).
+* Implement a Client Application( NextJS, NuxtJS or any other framework).
+
 
 ## Documentation
 API documentation can be accessed via [http://localhost:1337/documentation].It is based on Swagger UI. All available end-points can be visualized and tested from here.
