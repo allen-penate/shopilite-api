@@ -262,5 +262,5 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 2 Raspberry Pi -- Tota
       .end(done);
   });
 
-  
 });
+
