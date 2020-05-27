@@ -72,10 +72,10 @@ module.exports = {
 
   async updateSubTotal(id){
     let cart = await this.findOne({ id: id }, ["items"]);
-    const subtotal = cart.items.reduce((subtotal, item)=>{
-      subtotal += item.subtotal;
-      return subtotal;
-    }, (cart.subtotal || 0));
+    let subtotal = cart.items.reduce((_subtotal, item)=>{
+      _subtotal += item.subtotal;
+      return _subtotal;
+    }, (0));
     return await strapi.query('cart').update({id: cart.id}, {state: "in_progress", subtotal: subtotal});
   },
 
