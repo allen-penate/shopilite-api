@@ -239,7 +239,7 @@ describe("PUT /carts/:code/checkout -- Checkout cart with 1 Raspberry Pi -- Tota
             "quantity": 1,
             "subtotal": 30,
             "discount": 0,
-            "total": 60
+            "total": 30
         }
     ],
     "subtotal": 30,
